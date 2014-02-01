@@ -3,7 +3,8 @@ package FRC867.Nano2014.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import FRC867.Nano2014.OI;
-import FRC867.Nano2014.subsystems.ExampleSubsystem;
+import FRC867.Nano2014.subsystems.CompressorSubsystem;
+import FRC867.Nano2014.subsystems.DriveTrain;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -14,19 +15,20 @@ import FRC867.Nano2014.subsystems.ExampleSubsystem;
 public abstract class CommandBase extends Command {
 
     public static OI oi;
-    // Create a single static instance of all of your subsystems
-    public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+    
+    public static DriveTrain driveTrain = new DriveTrain();    
+    public static CompressorSubsystem compressor = new CompressorSubsystem();
 
     public static void init() {
-        // This MUST be here. If the OI creates Commands (which it very likely
-        // will), constructing it during the construction of CommandBase (from
-        // which commands extend), subsystems are not guaranteed to be
-        // yet. Thus, their requires() statements may grab null pointers. Bad
-        // news. Don't move it.
         oi = new OI();
+        
+        //Start up the compressor
+        Command startCompressor = new StartCompressor();
+        startCompressor.start();
 
         // Show what command your subsystem is running on the SmartDashboard
-        SmartDashboard.putData(exampleSubsystem);
+        SmartDashboard.putData(driveTrain);
+        SmartDashboard.putData(compressor);
     }
 
     public CommandBase(String name) {
