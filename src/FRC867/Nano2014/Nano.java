@@ -23,7 +23,7 @@ import FRC867.Nano2014.commands.CommandBase;
  */
 public class Nano extends IterativeRobot {
 
-    Command autonomousCommand;
+    //Command autonomousCommand;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -38,7 +38,7 @@ public class Nano extends IterativeRobot {
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
-        autonomousCommand.start();
+        //autonomousCommand.start();
     }
 
     /**
@@ -53,7 +53,7 @@ public class Nano extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-        autonomousCommand.cancel();
+        //autonomousCommand.cancel();
     }
 
     /**

@@ -22,7 +22,7 @@ public class DriveTrain extends Subsystem {
     }
     
     public void DriveArcade(double speed, double steering){
-        chassis.arcadeDrive(speed, steering, true);
+        chassis.arcadeDrive(speed, -1*steering, true); //Unvert the steering
     }
     
     //TODO: Not Tested

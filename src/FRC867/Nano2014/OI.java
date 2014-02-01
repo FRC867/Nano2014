@@ -1,6 +1,9 @@
 
 package FRC867.Nano2014;
 
+import FRC867.Nano2014.commands.ExtendShooter;
+import FRC867.Nano2014.commands.RetractShooter;
+import FRC867.Nano2014.commands.StartCompressor;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
@@ -17,10 +20,10 @@ public class OI {
             buttonX = new JoystickButton(gamePad, 3),
             buttonY = new JoystickButton(gamePad, 4);
     
-    
-    
     public OI(){
         //TODO: Bind onPress for buttons
+        buttonA.whenPressed(new ExtendShooter());
+        buttonB.whenPressed(new RetractShooter());
     }
     
     public double getSpeed(){

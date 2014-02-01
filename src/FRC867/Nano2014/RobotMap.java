@@ -11,8 +11,8 @@ public class RobotMap {
     public static final int DriveTrainLeftMotor = 1;
     public static final int DriveTrainRightMotor = 2;
     
-    public static final int PressureSwitchChannel = 3; //GPIO
-    public static final int CompressorRelayChannel = 7; //Relay Channel
+    public static final int PressureSwitchChannel = 1; //GPIO
+    public static final int CompressorRelayChannel = 1; //Relay Channel
     
     public static final int ShooterSolenoidLeftFoward = 1;
     public static final int ShooterSolenoidLeftReverse = 2;
