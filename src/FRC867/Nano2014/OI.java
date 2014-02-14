@@ -2,6 +2,7 @@
 package FRC867.Nano2014;
 
 import FRC867.Nano2014.commands.ExtendShooter;
+import FRC867.Nano2014.commands.FireShooter;
 import FRC867.Nano2014.commands.RetractShooter;
 import FRC867.Nano2014.commands.StartCompressor;
 import edu.wpi.first.wpilibj.Joystick;
@@ -18,12 +19,14 @@ public class OI {
     Button buttonA = new JoystickButton(gamePad, 1),
             buttonB = new JoystickButton(gamePad, 2),
             buttonX = new JoystickButton(gamePad, 3),
-            buttonY = new JoystickButton(gamePad, 4);
+            buttonY = new JoystickButton(gamePad, 4),            
+            buttonRB = new JoystickButton(gamePad, 6);
     
     public OI(){
         //TODO: Bind onPress for buttons
         buttonA.whenPressed(new ExtendShooter());
         buttonB.whenPressed(new RetractShooter());
+        buttonRB.whenPressed(new FireShooter());
     }
     
     public double getSpeed(){
@@ -32,6 +35,10 @@ public class OI {
     
     public double getTurn(){
         return gamePad.getRawAxis(4); //Right Thumb X Axis
+    }
+    
+    public double getLeftTrigger(){
+        return gamePad.getRawAxis(3); //Left Trigger Axis
     }
     
     

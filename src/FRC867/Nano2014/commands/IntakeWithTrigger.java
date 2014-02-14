@@ -9,13 +9,12 @@ package FRC867.Nano2014.commands;
  *
  * @author Team-867
  */
-public class ExtendShooter extends CommandBase {
+public class IntakeWithTrigger extends CommandBase {
     
-    public ExtendShooter() {
+    public IntakeWithTrigger() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(shooter);
-        setTimeout(.3);
+        requires(intake);
     }
 
     // Called just before this Command runs the first time
@@ -24,17 +23,16 @@ public class ExtendShooter extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        shooter.Shoot();
+        intake.runIntake(oi.getLeftTrigger());
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return this.isTimedOut();
+        return false;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-        shooter.Reset();
     }
 
     // Called when another command which requires one or more of the same

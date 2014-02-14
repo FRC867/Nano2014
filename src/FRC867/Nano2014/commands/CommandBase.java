@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import FRC867.Nano2014.OI;
 import FRC867.Nano2014.subsystems.CompressorSubsystem;
 import FRC867.Nano2014.subsystems.DriveTrain;
+import FRC867.Nano2014.subsystems.Intake;
 import FRC867.Nano2014.subsystems.Shooter;
 
 /**
@@ -20,6 +21,7 @@ public abstract class CommandBase extends Command {
     public static DriveTrain driveTrain = new DriveTrain();    
     public static CompressorSubsystem compressor = new CompressorSubsystem();
     public static Shooter shooter = new Shooter();
+    public static Intake intake = new Intake();
 
     public static void init() {
         oi = new OI();

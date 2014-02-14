@@ -14,10 +14,15 @@ public class RobotMap {
     public static final int PressureSwitchChannel = 1; //GPIO
     public static final int CompressorRelayChannel = 1; //Relay Channel
     
-    public static final int ShooterSolenoidLeftFoward = 1;
-    public static final int ShooterSolenoidLeftReverse = 2;
+    public static final int ShooterRight = 1;
+    public static final int ShooterLeft = 2;
     
-    public static final int ShooterSolenoidRightFoward = 3;
-    public static final int ShooterSolenoidRightReverse = 4;
+    //public static final int ShooterSolenoidLeftFoward = 1;
+    //public static final int ShooterSolenoidLeftReverse = 2;
+    
+    // static final int ShooterSolenoidRightFoward = 3;
+    //public static final int ShooterSolenoidRightReverse = 4;
+   
+    public static final int IntakeMotor = 3; //Top CIM on Intake
     
 }

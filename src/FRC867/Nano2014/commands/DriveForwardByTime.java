@@ -9,13 +9,14 @@ package FRC867.Nano2014.commands;
  *
  * @author Team-867
  */
-public class ExtendShooter extends CommandBase {
+public class DriveForwardByTime extends CommandBase {
     
-    public ExtendShooter() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
-        requires(shooter);
-        setTimeout(.3);
+    private double driveForwardTime; //store the forward time for the setTimeout
+    
+    public DriveForwardByTime(double seconds) {        
+        driveForwardTime = seconds; //Set the seconds that we're going to go forward for.
+        
+        requires(driveTrain);
     }
 
     // Called just before this Command runs the first time
@@ -24,7 +25,8 @@ public class ExtendShooter extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        shooter.Shoot();
+        driveTrain.DriveArcade(1, 0);
+        this.setTimeout(driveForwardTime);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -34,7 +36,7 @@ public class ExtendShooter extends CommandBase {
 
     // Called once after isFinished returns true
     protected void end() {
-        shooter.Reset();
+        driveTrain.DriveArcade(0, 0);
     }
 
     // Called when another command which requires one or more of the same

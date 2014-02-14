@@ -20,7 +20,7 @@ public class DriveTrain extends Subsystem {
     public void initDefaultCommand() {
         setDefaultCommand(new DriveWithGamepad());
     }
-    
+        
     public void DriveArcade(double speed, double steering){
         chassis.arcadeDrive(speed, -1*steering, true); //Unvert the steering
     }

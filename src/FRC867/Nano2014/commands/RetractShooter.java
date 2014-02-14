@@ -12,10 +12,8 @@ package FRC867.Nano2014.commands;
 public class RetractShooter extends CommandBase {
     
     public RetractShooter() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
         requires(shooter);
-        setTimeout(2);
+        setTimeout(1);
     }
 
     // Called just before this Command runs the first time
