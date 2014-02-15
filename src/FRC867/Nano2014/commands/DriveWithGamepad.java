@@ -5,6 +5,8 @@
  */
 package FRC867.Nano2014.commands;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 /**
  *
  * @author Mike
@@ -13,6 +15,7 @@ public class DriveWithGamepad extends CommandBase {
     
     public DriveWithGamepad() {
         requires(driveTrain);
+        requires(ballDistanceSensor);
     }
 
     // Called just before this Command runs the first time
@@ -22,6 +25,18 @@ public class DriveWithGamepad extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         driveTrain.DriveArcade(oi.getSpeed(), oi.getTurn());
+        
+        //Just output everything here cause blah
+        //SmartDashboard.putNumber("Shot Power", oi.getShotPower()*100);
+        
+        SmartDashboard.putNumber("Distance", ballDistanceSensor.GetAverageDistance());
+        
+        //Output the drive direction to users
+        if(driveTrain.GetDirection()==1){
+            SmartDashboard.putString("Drive Direction", "Shooter is Front");
+        }else{
+            SmartDashboard.putString("Drive Direction", "Intake is Front");
+        }
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -1,9 +1,12 @@
 
 package FRC867.Nano2014;
 
+import FRC867.Nano2014.commands.DriveForwardDirection;
+import FRC867.Nano2014.commands.DriveReverseDirection;
 import FRC867.Nano2014.commands.ExtendShooter;
 import FRC867.Nano2014.commands.FireShooter;
 import FRC867.Nano2014.commands.RetractShooter;
+import FRC867.Nano2014.commands.ReverseDrive;
 import FRC867.Nano2014.commands.StartCompressor;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -20,13 +23,17 @@ public class OI {
             buttonB = new JoystickButton(gamePad, 2),
             buttonX = new JoystickButton(gamePad, 3),
             buttonY = new JoystickButton(gamePad, 4),            
-            buttonRB = new JoystickButton(gamePad, 6);
+            buttonRB = new JoystickButton(gamePad, 6),
+            buttonRightJoystick = new JoystickButton(gamePad, 10);
+    
+    //Joystick joyStick = new Joystick(1);
     
     public OI(){
         //TODO: Bind onPress for buttons
-        buttonA.whenPressed(new ExtendShooter());
-        buttonB.whenPressed(new RetractShooter());
+        buttonA.whenPressed(new DriveForwardDirection());
+        buttonB.whenPressed(new DriveReverseDirection());
         buttonRB.whenPressed(new FireShooter());
+        buttonRightJoystick.whenPressed(new ReverseDrive());
     }
     
     public double getSpeed(){
@@ -38,10 +45,13 @@ public class OI {
     }
     
     public double getLeftTrigger(){
-        return gamePad.getRawAxis(3); //Left Trigger Axis
-    }
+        return -1*gamePad.getRawAxis(3); //Left Trigger Axis (-1 is to read the left as intake)
+    }   
     
-    
+    //public double getShotPower(){
+        //return (joyStick.getRawAxis(3)+1)/2;
+    //    return 1.0;
+    //}
     
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.

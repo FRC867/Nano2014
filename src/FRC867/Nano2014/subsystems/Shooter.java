@@ -16,11 +16,11 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Shooter extends Subsystem {
     
-    //TODO: Change these to single solenoids
-    Solenoid shooterLeftSolenoid = new Solenoid(RobotMap.ShooterLeft);
-    Solenoid shooterRightSolenoid = new Solenoid(RobotMap.ShooterRight);
-    //Solenoid testSolenoid = new Solenoid(1);
-    //Solenoid testSolenoid1 = new Solenoid(2);
+    public double ShooterPower = 1.0;
+    
+    private Solenoid shooterLeftSolenoid = new Solenoid(RobotMap.ShooterLeft);
+    private Solenoid shooterRightSolenoid = new Solenoid(RobotMap.ShooterRight);
+    
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
@@ -39,5 +39,13 @@ public class Shooter extends Subsystem {
     public void Reverse(){
         shooterLeftSolenoid.set(false);
         shooterRightSolenoid.set(false);
+    }
+    
+    public void SetShooterPower(double power){
+        ShooterPower = power;
+    }
+    
+    public double GetShooterPower(){
+        return ShooterPower;
     }
 }

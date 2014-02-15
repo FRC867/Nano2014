@@ -5,6 +5,8 @@
  */
 package FRC867.Nano2014.commands;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 /**
  *
  * @author Team-867
@@ -12,8 +14,6 @@ package FRC867.Nano2014.commands;
 public class ExtendShooter extends CommandBase {
     
     public ExtendShooter() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
         requires(shooter);
         setTimeout(.3);
     }
