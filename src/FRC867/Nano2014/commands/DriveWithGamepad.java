@@ -15,7 +15,7 @@ public class DriveWithGamepad extends CommandBase {
     
     public DriveWithGamepad() {
         requires(driveTrain);
-        requires(ballDistanceSensor);
+        //requires(ballDistanceSensor);
     }
 
     // Called just before this Command runs the first time
@@ -29,7 +29,7 @@ public class DriveWithGamepad extends CommandBase {
         //Just output everything here cause blah
         //SmartDashboard.putNumber("Shot Power", oi.getShotPower()*100);
         
-        SmartDashboard.putNumber("Distance", ballDistanceSensor.GetAverageDistance());
+        //SmartDashboard.putNumber("Distance", ballDistanceSensor.GetAverageDistance());
         
         //Output the drive direction to users
         if(driveTrain.GetDirection()==1){

@@ -15,15 +15,15 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class BallDistanceSensor extends Subsystem {
     
-    public static Ultrasonic ultrasonic = new Ultrasonic(RobotMap.BallDistanceSensorInput,
-            RobotMap.BallDistanceSensorOutput);
+    //public static Ultrasonic ultrasonic = new Ultrasonic(RobotMap.BallDistanceSensorInput,
+    //        RobotMap.BallDistanceSensorOutput);
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
         
         //Set the distance sensing automatic to true
-        ultrasonic.setAutomaticMode(true);
+        //ultrasonic.setAutomaticMode(true);
     }
     
     public double GetAverageDistance(){
@@ -35,7 +35,8 @@ public class BallDistanceSensor extends Subsystem {
     }
     
     private double GetDistanceInches(){
-        return ultrasonic.getRangeInches();
+        //return ultrasonic.getRangeInches();
+        return 0.0;
     }
     
     private static double median(double[] m) {

@@ -24,7 +24,7 @@ public abstract class CommandBase extends Command {
     public static CompressorSubsystem compressor = new CompressorSubsystem();
     public static Shooter shooter = new Shooter();
     public static Intake intake = new Intake();
-    public static BallDistanceSensor ballDistanceSensor = new BallDistanceSensor();
+    //public static BallDistanceSensor ballDistanceSensor = new BallDistanceSensor();
 
     public static void init() {
         oi = new OI();

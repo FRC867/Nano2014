@@ -15,7 +15,7 @@ public class IntakeWithTrigger extends CommandBase {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
         requires(intake);
-        requires(ballDistanceSensor);
+        //requires(ballDistanceSensor);
     }
 
     // Called just before this Command runs the first time
