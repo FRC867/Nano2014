@@ -26,11 +26,6 @@ public class DriveWithGamepad extends CommandBase {
     protected void execute() {
         driveTrain.DriveArcade(oi.getSpeed(), oi.getTurn());
         
-        //Just output everything here cause blah
-        //SmartDashboard.putNumber("Shot Power", oi.getShotPower()*100);
-        
-        //SmartDashboard.putNumber("Distance", ballDistanceSensor.GetAverageDistance());
-        
         //Output the drive direction to users
         if(driveTrain.GetDirection()==1){
             SmartDashboard.putString("Drive Direction", "Shooter is Front");

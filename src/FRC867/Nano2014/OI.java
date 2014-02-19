@@ -8,6 +8,7 @@ import FRC867.Nano2014.commands.FireShooter;
 import FRC867.Nano2014.commands.RetractShooter;
 import FRC867.Nano2014.commands.ReverseDrive;
 import FRC867.Nano2014.commands.StartCompressor;
+import FRC867.Nano2014.commands.ToggleCompressor;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
@@ -24,16 +25,20 @@ public class OI {
             buttonX = new JoystickButton(gamePad, 3),
             buttonY = new JoystickButton(gamePad, 4),            
             buttonRB = new JoystickButton(gamePad, 6),
+            buttonBack = new JoystickButton(gamePad, 7),
             buttonRightJoystick = new JoystickButton(gamePad, 10);
     
     //Joystick joyStick = new Joystick(1);
     
     public OI(){
         //TODO: Bind onPress for buttons
-        buttonA.whenPressed(new DriveForwardDirection());
-        buttonB.whenPressed(new DriveReverseDirection());
+        buttonX.whenPressed(new DriveForwardDirection());
+        buttonY.whenPressed(new DriveReverseDirection());
+        buttonA.whenPressed(new ReverseDrive());
         buttonRB.whenPressed(new FireShooter());
-        buttonRightJoystick.whenPressed(new ReverseDrive());
+        buttonBack.whenPressed(new ToggleCompressor()); //Allow for compressor overrides
+        
+        //buttonRightJoystick.whenPressed(new ReverseDrive()); //Disable this feature since it's annoying
     }
     
     public double getSpeed(){

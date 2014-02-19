@@ -16,8 +16,8 @@ public class AutoSequence extends CommandGroup {
     public AutoSequence() {
         
         addSequential(new DriveForwardByTime(3.0)); //Drive Foward for 3 Seconds
-        addSequential(new FireShooter()); //Fire the shooter
-        addSequential(new DriveForwardByTime(3.0)); //Drive moar foward
+        //addSequential(new FireShooter()); //Fire the shooter
+        //addSequential(new DriveForwardByTime(3.0)); //Drive moar foward
         
         // Add Commands here:
         // e.g. addSequential(new Command1());

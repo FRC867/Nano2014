@@ -25,6 +25,8 @@ public class RobotMap {
    
     public static final int IntakeMotor = 3; //Top CIM on Intake
     
+    public static final int LaserRelay = 4; //Laser Pointer Spike Relay
+    
     //public static final int BallDistanceSensorOutput = 11;
     //public static final int BallDistanceSensorInput = 12;
     
