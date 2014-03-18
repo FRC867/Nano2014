@@ -41,11 +41,13 @@ public class Shooter extends Subsystem {
         shooterRightSolenoid.set(false);
     }
     
+    //TODO: Try removing the following code later
+    /*
     public void SetShooterPower(double power){
         ShooterPower = power;
     }
     
     public double GetShooterPower(){
         return ShooterPower;
-    }
+    }*/
 }

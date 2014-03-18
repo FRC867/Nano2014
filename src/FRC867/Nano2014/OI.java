@@ -7,6 +7,7 @@ import FRC867.Nano2014.commands.ExtendShooter;
 import FRC867.Nano2014.commands.FireShooter;
 import FRC867.Nano2014.commands.RetractShooter;
 import FRC867.Nano2014.commands.ReverseDrive;
+import FRC867.Nano2014.commands.SoftFireShooter;
 import FRC867.Nano2014.commands.StartCompressor;
 import FRC867.Nano2014.commands.ToggleCompressor;
 import edu.wpi.first.wpilibj.Joystick;
@@ -23,7 +24,8 @@ public class OI {
     Button buttonA = new JoystickButton(gamePad, 1),
             buttonB = new JoystickButton(gamePad, 2),
             buttonX = new JoystickButton(gamePad, 3),
-            buttonY = new JoystickButton(gamePad, 4),            
+            buttonY = new JoystickButton(gamePad, 4),         
+            buttonLB = new JoystickButton(gamePad, 5),         
             buttonRB = new JoystickButton(gamePad, 6),
             buttonBack = new JoystickButton(gamePad, 7),
             buttonRightJoystick = new JoystickButton(gamePad, 10);
@@ -36,6 +38,7 @@ public class OI {
         buttonY.whenPressed(new DriveReverseDirection());
         buttonA.whenPressed(new ReverseDrive());
         buttonRB.whenPressed(new FireShooter());
+        buttonLB.whenPressed(new SoftFireShooter());
         buttonBack.whenPressed(new ToggleCompressor()); //Allow for compressor overrides
         
         //buttonRightJoystick.whenPressed(new ReverseDrive()); //Disable this feature since it's annoying
